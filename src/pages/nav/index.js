@@ -161,11 +161,12 @@ const mapDispatch = dispatch => ({
   /**
    * 改变页面标题名称
    * !Bug: 刷新页面，页面名称又会变成原来的样子
-   * *解决办法: 将标题写在每个页面中
+   * *解决办法: 将标题写死在每个页面中
    */
   changePageName(context) {
     dispatch(headerAction.changePageName(context));
   }
 });
 
+// * withRouter让Nav组件获取match,history,location等属性
 export default withRouter(connect(null, mapDispatch)(Nav));
