@@ -13,6 +13,7 @@ import Loading from "./pages/ui/loading/loadable";
 import Note from "./pages/ui/note/loadable";
 import Message from "./pages/ui/message/loadable";
 import Tab from "./pages/ui/tab/loadable";
+import Gallery from "./pages/ui/gallery/loadable";
 
 const history = createHistory();
 
@@ -36,6 +37,7 @@ class App extends PureComponent {
               <Route path="/ui/note" exact component={Note} />
               <Route path="/ui/message" exact component={Message} />
               <Route path="/ui/tab" exact component={Tab} />
+              <Route path="/ui/gallery" exact component={Gallery} />
             </Layout>
           </Layout>
         </Router>

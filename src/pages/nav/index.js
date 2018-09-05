@@ -61,7 +61,7 @@ class Nav extends PureComponent {
             <Menu.Item key="/ui/tab" context="Tab页标签">
               Tab页标签
             </Menu.Item>
-            <Menu.Item key="/ui/card" context="图片画廊">
+            <Menu.Item key="/ui/gallery" context="图片画廊">
               图片画廊
             </Menu.Item>
             <Menu.Item key="/ui/carousel" context="轮播图">
