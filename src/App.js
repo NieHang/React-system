@@ -8,7 +8,7 @@ import Nav from "./pages/nav";
 import Header from "./common/header";
 import Home from "./pages/home";
 import Buttons from "./pages/ui/buttons/loadable";
-import Modal from "./pages/ui/modal/index";
+import Modal from "./pages/ui/modal/loadable";
 
 const history = createHistory();
 
