@@ -1,15 +1,13 @@
 import React, { PureComponent } from "react";
 import { NavBox, Logo } from "./style";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { Menu, Icon } from "antd";
+import { connect } from "react-redux";
+import { actionCreators as headerAction } from "../../common/header/store";
 
 const SubMenu = Menu.SubMenu;
 
-function handleClick(e) {
-  console.log("click", e);
-}
-
-export default class Nav extends PureComponent {
+class Nav extends PureComponent {
   render() {
     return (
       <NavBox>
@@ -19,19 +17,20 @@ export default class Nav extends PureComponent {
               <img
                 className="logo_img"
                 src="http://imoocms.51purse.com/assets/logo-ant.svg"
-                alt=""
+                alt="logo"
               />
               <span>AntD</span>
             </div>
           </Link>
         </Logo>
         <Menu
-          onClick={handleClick}
+          /* 绑定this,获取history属性,用于跳转 */
+          onClick={this.handleClick.bind(this)}
           mode="vertical"
-          theme='dark'
-          className='menu'
+          theme="dark"
+          className="menu"
         >
-          <Menu.Item key="home">
+          <Menu.Item key="/" context="首页">
             <Icon type="home" />
             <span>首页</span>
           </Menu.Item>
@@ -44,17 +43,34 @@ export default class Nav extends PureComponent {
               </span>
             }
           >
-            <Menu.Item key="button">按钮</Menu.Item>
-            <Menu.Item key="model">弹框</Menu.Item>
-            <Menu.Item key="loading">loading</Menu.Item>
-            <Menu.Item key="note">通知提醒</Menu.Item>
-            <Menu.Item key="message">全局Message</Menu.Item>
-            <Menu.Item key="tab">Tab页标签</Menu.Item>
-            <Menu.Item key="card">图片画廊</Menu.Item>
-            <Menu.Item key="carousel">轮播图</Menu.Item>
+            <Menu.Item key="/ui/buttons" context="按钮">
+              按钮
+            </Menu.Item>
+            <Menu.Item key="model" context="弹框">
+              弹框
+            </Menu.Item>
+            <Menu.Item key="loading" context="loading">
+              loading
+            </Menu.Item>
+            <Menu.Item key="note" context="通知提醒">
+              通知提醒
+            </Menu.Item>
+            <Menu.Item key="message" context="全局Message">
+              全局Message
+            </Menu.Item>
+            <Menu.Item key="tab" context="Tab页标签">
+              Tab页标签
+            </Menu.Item>
+            <Menu.Item key="card" context="图片画廊">
+              图片画廊
+            </Menu.Item>
+            <Menu.Item key="carousel" context="轮播图">
+              轮播图
+            </Menu.Item>
           </SubMenu>
           <SubMenu
             key="form"
+            context="表单"
             title={
               <span>
                 <Icon type="setting" />
@@ -62,11 +78,16 @@ export default class Nav extends PureComponent {
               </span>
             }
           >
-            <Menu.Item key="login">登录</Menu.Item>
-            <Menu.Item key="enroll">注册</Menu.Item>
+            <Menu.Item key="login" context="登录">
+              登录
+            </Menu.Item>
+            <Menu.Item key="enroll" context="注册">
+              注册
+            </Menu.Item>
           </SubMenu>
           <SubMenu
             key="table"
+            context="表格"
             title={
               <span>
                 <Icon type="table" />
@@ -74,31 +95,36 @@ export default class Nav extends PureComponent {
               </span>
             }
           >
-            <Menu.Item key="basic">基础表格</Menu.Item>
-            <Menu.Item key="high">高级表格</Menu.Item>
+            <Menu.Item key="basic" context="基础表格">
+              基础表格
+            </Menu.Item>
+            <Menu.Item key="high" context="高级表格">
+              高级表格
+            </Menu.Item>
           </SubMenu>
-          <Menu.Item key="rich">
+          <Menu.Item key="rich" context="富文本">
             <Icon type="file-text" theme="outlined" />
             <span>富文本</span>
           </Menu.Item>
-          <Menu.Item key="city">
+          <Menu.Item key="city" context="城市管理">
             <Icon type="dot-chart" theme="outlined" />
             <span>城市管理</span>
           </Menu.Item>
-          <Menu.Item key="order">
+          <Menu.Item key="order" context="订单管理">
             <Icon type="bar-chart" theme="outlined" />
             <span>订单管理</span>
           </Menu.Item>
-          <Menu.Item key="user">
+          <Menu.Item key="user" context="员工管理">
             <Icon type="usergroup-add" theme="outlined" />
             <span>员工管理</span>
           </Menu.Item>
-          <Menu.Item key="bikemap">
+          <Menu.Item key="bikemap" context="车辆地图">
             <Icon type="compass" theme="outlined" />
             <span>车辆地图</span>
           </Menu.Item>
           <SubMenu
             key="chart"
+            context="图表"
             title={
               <span>
                 <Icon type="area-chart" theme="outlined" />
@@ -106,11 +132,17 @@ export default class Nav extends PureComponent {
               </span>
             }
           >
-            <Menu.Item key="bar">柱形图</Menu.Item>
-            <Menu.Item key="pie">饼图</Menu.Item>
-            <Menu.Item key="line">折线图</Menu.Item>
+            <Menu.Item key="bar" context="柱形图">
+              柱形图
+            </Menu.Item>
+            <Menu.Item key="pie" context="饼图">
+              饼图
+            </Menu.Item>
+            <Menu.Item key="line" context="折线图">
+              折线图
+            </Menu.Item>
           </SubMenu>
-          <Menu.Item key="permission">
+          <Menu.Item key="permission" context="权限设置">
             <Icon type="exclamation" theme="outlined" />
             <span>权限设置</span>
           </Menu.Item>
@@ -118,4 +150,22 @@ export default class Nav extends PureComponent {
       </NavBox>
     );
   }
+  
+  handleClick(e) {
+    this.props.history.push(e.key);
+    this.props.changePageName(e.item.props.context);
+  }
 }
+
+const mapDispatch = dispatch => ({
+  /**
+   * 改变页面标题名称
+   * !Bug: 刷新页面，页面名称又会变成原来的样子
+   * *解决办法: 将标题写在每个页面中
+   */
+  changePageName(context) {
+    dispatch(headerAction.changePageName(context));
+  }
+});
+
+export default withRouter(connect(null, mapDispatch)(Nav));

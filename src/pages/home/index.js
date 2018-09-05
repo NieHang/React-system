@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { HomeWrapper } from "./style";
 import { emojify } from "react-emojione";
 
-export default class Home extends Component {
+export default class Home extends PureComponent {
   render() {
     return (
       <HomeWrapper>

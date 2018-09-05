@@ -1,0 +1,1 @@
+export const CHANGE_URL = 'nav/CHANGE_URL';
