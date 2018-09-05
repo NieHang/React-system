@@ -14,6 +14,7 @@ import Note from "./pages/ui/note/loadable";
 import Message from "./pages/ui/message/loadable";
 import Tab from "./pages/ui/tab/loadable";
 import Gallery from "./pages/ui/gallery/loadable";
+import Carousel from "./pages/ui/carousel/loadable";
 
 const history = createHistory();
 
@@ -38,6 +39,7 @@ class App extends PureComponent {
               <Route path="/ui/message" exact component={Message} />
               <Route path="/ui/tab" exact component={Tab} />
               <Route path="/ui/gallery" exact component={Gallery} />
+              <Route path="/ui/carousel" exact component={Carousel} />
             </Layout>
           </Layout>
         </Router>
