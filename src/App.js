@@ -12,6 +12,7 @@ import Modal from "./pages/ui/modal/loadable";
 import Loading from "./pages/ui/loading/loadable";
 import Note from "./pages/ui/note/loadable";
 import Message from "./pages/ui/message/loadable";
+import Tab from "./pages/ui/tab/loadable";
 
 const history = createHistory();
 
@@ -34,6 +35,7 @@ class App extends PureComponent {
               <Route path="/ui/loading" exact component={Loading} />
               <Route path="/ui/note" exact component={Note} />
               <Route path="/ui/message" exact component={Message} />
+              <Route path="/ui/tab" exact component={Tab} />
             </Layout>
           </Layout>
         </Router>
