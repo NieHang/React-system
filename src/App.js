@@ -10,6 +10,7 @@ import Home from "./pages/home";
 import Buttons from "./pages/ui/buttons/loadable";
 import Modal from "./pages/ui/modal/loadable";
 import Loading from './pages/ui/loading/loadable';
+import Note from './pages/ui/note/loadable';
 
 const history = createHistory();
 
@@ -30,6 +31,7 @@ class App extends PureComponent {
               <Route path="/ui/buttons" exact component={Buttons} />
               <Route path="/ui/modal" exact component={Modal} />
               <Route path='/ui/loading' exact component={Loading}/>
+              <Route path='/ui/note' exact component={Note}/>
             </Layout>
           </Layout>
         </Router>
