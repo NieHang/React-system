@@ -46,25 +46,25 @@ class Nav extends PureComponent {
             <Menu.Item key="/ui/buttons" context="按钮">
               按钮
             </Menu.Item>
-            <Menu.Item key="model" context="弹框">
+            <Menu.Item key="/ui/modal" context="弹框">
               弹框
             </Menu.Item>
-            <Menu.Item key="loading" context="loading">
+            <Menu.Item key="/ui/loading" context="loading">
               loading
             </Menu.Item>
-            <Menu.Item key="note" context="通知提醒">
+            <Menu.Item key="/ui/note" context="通知提醒">
               通知提醒
             </Menu.Item>
-            <Menu.Item key="message" context="全局Message">
+            <Menu.Item key="/ui/message" context="全局Message">
               全局Message
             </Menu.Item>
-            <Menu.Item key="tab" context="Tab页标签">
+            <Menu.Item key="/ui/tab" context="Tab页标签">
               Tab页标签
             </Menu.Item>
-            <Menu.Item key="card" context="图片画廊">
+            <Menu.Item key="/ui/card" context="图片画廊">
               图片画廊
             </Menu.Item>
-            <Menu.Item key="carousel" context="轮播图">
+            <Menu.Item key="/ui/carousel" context="轮播图">
               轮播图
             </Menu.Item>
           </SubMenu>
