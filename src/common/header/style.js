@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
   background-color: #fff;
@@ -28,7 +28,7 @@ export const HeaderWrapper = styled.div`
       margin-left: 100px;
       &::after {
         position: absolute;
-        content: '';
+        content: "";
         width: 20px;
         height: 20px;
         left: 50%;
@@ -37,10 +37,15 @@ export const HeaderWrapper = styled.div`
         transform: rotate(45deg) translate(-50%);
       }
     }
-    .time {
+    .time_weather {
       float: right;
-      margin-right: 100px;
-      color: #999;
+      .time {
+        margin-right: 50px;
+        color: #999;
+      }
+      .ant-btn {
+        margin-right: 50px;
+      }
     }
   }
 `;
