@@ -78,10 +78,10 @@ class Nav extends PureComponent {
               </span>
             }
           >
-            <Menu.Item key="login" context="登录">
+            <Menu.Item key="/form/login" context="登录">
               登录
             </Menu.Item>
-            <Menu.Item key="enroll" context="注册">
+            <Menu.Item key="/form/enroll" context="注册">
               注册
             </Menu.Item>
           </SubMenu>
