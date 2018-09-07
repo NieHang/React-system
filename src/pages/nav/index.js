@@ -102,7 +102,7 @@ class Nav extends PureComponent {
               高级表格
             </Menu.Item>
           </SubMenu>
-          <Menu.Item key="rich" context="富文本">
+          <Menu.Item key="/rich" context="富文本">
             <Icon type="file-text" theme="outlined" />
             <span>富文本</span>
           </Menu.Item>

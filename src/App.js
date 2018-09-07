@@ -19,6 +19,7 @@ import Login from "./pages/form/login/loadable";
 import Enroll from "./pages/form/enroll/loadable";
 import BasicTable from "./pages/table/basic/loadable";
 import HighTable from "./pages/table/high/loadable";
+import Rich from './pages/rich/loadable';
 
 const history = createHistory();
 
@@ -48,6 +49,7 @@ class App extends PureComponent {
               <Route path="/form/enroll" exact component={Enroll} />
               <Route path="/table/basic" exact component={BasicTable} />
               <Route path="/table/high" exact component={HighTable} />
+              <Route path='/rich' exact component={Rich}/>
             </Layout>
           </Layout>
         </Router>
