@@ -2,9 +2,11 @@ import { combineReducers } from 'redux-immutable';
 import { headerReducer } from '../common/header/store';
 import { navReducer } from '../pages/nav/store';
 import { basicTableReducer } from '../pages/table/basic/store';
+import { highReducer } from '../pages/table/high/store';
 
 export default combineReducers({
   header: headerReducer,
   nav: navReducer,
-  basicTable: basicTableReducer
+  basicTable: basicTableReducer,
+  highTable: highReducer
 });

@@ -18,6 +18,7 @@ import Carousel from "./pages/ui/carousel/loadable";
 import Login from "./pages/form/login/loadable";
 import Enroll from "./pages/form/enroll/loadable";
 import BasicTable from "./pages/table/basic/loadable";
+import HighTable from "./pages/table/high/loadable";
 
 const history = createHistory();
 
@@ -46,6 +47,7 @@ class App extends PureComponent {
               <Route path="/form/login" exact component={Login} />
               <Route path="/form/enroll" exact component={Enroll} />
               <Route path="/table/basic" exact component={BasicTable} />
+              <Route path="/table/high" exact component={HighTable} />
             </Layout>
           </Layout>
         </Router>
