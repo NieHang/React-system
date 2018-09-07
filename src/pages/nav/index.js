@@ -95,10 +95,10 @@ class Nav extends PureComponent {
               </span>
             }
           >
-            <Menu.Item key="basic" context="基础表格">
+            <Menu.Item key="/table/basic" context="基础表格">
               基础表格
             </Menu.Item>
-            <Menu.Item key="high" context="高级表格">
+            <Menu.Item key="/table/high" context="高级表格">
               高级表格
             </Menu.Item>
           </SubMenu>

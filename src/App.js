@@ -16,7 +16,8 @@ import Tab from "./pages/ui/tab/loadable";
 import Gallery from "./pages/ui/gallery/loadable";
 import Carousel from "./pages/ui/carousel/loadable";
 import Login from "./pages/form/login/loadable";
-import Enroll from './pages/form/enroll/loadable';
+import Enroll from "./pages/form/enroll/loadable";
+import BasicTable from "./pages/table/basic/loadable";
 
 const history = createHistory();
 
@@ -43,7 +44,8 @@ class App extends PureComponent {
               <Route path="/ui/gallery" exact component={Gallery} />
               <Route path="/ui/carousel" exact component={Carousel} />
               <Route path="/form/login" exact component={Login} />
-              <Route path='/form/enroll' exact component={Enroll}/>
+              <Route path="/form/enroll" exact component={Enroll} />
+              <Route path="/table/basic" exact component={BasicTable} />
             </Layout>
           </Layout>
         </Router>
