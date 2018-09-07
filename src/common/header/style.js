@@ -37,6 +37,9 @@ export const HeaderWrapper = styled.div`
         transform: rotate(45deg) translate(-50%);
       }
     }
+    audio {
+      margin-left: 400px;
+    }
     .time_weather {
       float: right;
       .time {
