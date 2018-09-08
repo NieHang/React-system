@@ -106,19 +106,19 @@ class Nav extends PureComponent {
             <Icon type="file-text" theme="outlined" />
             <span>富文本</span>
           </Menu.Item>
-          <Menu.Item key="city" context="城市管理">
+          <Menu.Item key="/city" context="城市管理">
             <Icon type="dot-chart" theme="outlined" />
             <span>城市管理</span>
           </Menu.Item>
-          <Menu.Item key="order" context="订单管理">
+          <Menu.Item key="/order" context="订单管理">
             <Icon type="bar-chart" theme="outlined" />
             <span>订单管理</span>
           </Menu.Item>
-          <Menu.Item key="user" context="员工管理">
+          <Menu.Item key="/user" context="员工管理">
             <Icon type="usergroup-add" theme="outlined" />
             <span>员工管理</span>
           </Menu.Item>
-          <Menu.Item key="bikemap" context="车辆地图">
+          <Menu.Item key="/bikemap" context="车辆地图">
             <Icon type="compass" theme="outlined" />
             <span>车辆地图</span>
           </Menu.Item>

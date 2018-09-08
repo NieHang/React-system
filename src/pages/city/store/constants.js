@@ -1,0 +1,1 @@
+export const GET_DATA = 'city/GET_DATA';
