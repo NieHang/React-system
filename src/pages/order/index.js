@@ -76,6 +76,7 @@ class Order extends PureComponent {
             columns={[...columns.toJS()]}
             dataSource={[...data]}
             rowSelection={{type: 'radio'}}
+            style={{x: 1200}}
           />
         </Card>
       </OrderWrapper>
