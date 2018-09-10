@@ -5,6 +5,7 @@ import { basicTableReducer } from '../pages/table/basic/store';
 import { highReducer } from '../pages/table/high/store';
 import { cityReducer } from '../pages/city/store';
 import { orderReducer } from '../pages/order/store';
+import { userReducer } from '../pages/user/store';
 
 export default combineReducers({
   header: headerReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   basicTable: basicTableReducer,
   highTable: highReducer,
   city: cityReducer,
-  order: orderReducer
+  order: orderReducer,
+  user: userReducer
 });

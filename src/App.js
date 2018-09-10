@@ -22,6 +22,7 @@ import HighTable from "./pages/table/high/loadable";
 import Rich from "./pages/rich/loadable";
 import City from "./pages/city/loadable";
 import Order from "./pages/order/loadable";
+import User from './pages/user/loadable';
 
 const history = createHistory();
 
@@ -54,6 +55,7 @@ class App extends PureComponent {
               <Route path="/rich" exact component={Rich} />
               <Route path="/city" exact component={City} />
               <Route path="/order" exact component={Order} />
+              <Route path='/user' exact component={User}/>
             </Layout>
           </Layout>
         </Router>
