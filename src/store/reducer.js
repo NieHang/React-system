@@ -6,6 +6,7 @@ import { highReducer } from '../pages/table/high/store';
 import { cityReducer } from '../pages/city/store';
 import { orderReducer } from '../pages/order/store';
 import { userReducer } from '../pages/user/store';
+import { mapReducer } from '../pages/bikemap/store';
 
 export default combineReducers({
   header: headerReducer,
@@ -14,5 +15,6 @@ export default combineReducers({
   highTable: highReducer,
   city: cityReducer,
   order: orderReducer,
-  user: userReducer
+  user: userReducer,
+  map: mapReducer
 });

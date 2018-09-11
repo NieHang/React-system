@@ -23,6 +23,7 @@ import Rich from "./pages/rich/loadable";
 import City from "./pages/city/loadable";
 import Order from "./pages/order/loadable";
 import User from './pages/user/loadable';
+import BikeMap from './pages/bikemap/loadable';
 
 const history = createHistory();
 
@@ -56,6 +57,7 @@ class App extends PureComponent {
               <Route path="/city" exact component={City} />
               <Route path="/order" exact component={Order} />
               <Route path='/user' exact component={User}/>
+              <Route path='/bikemap' exact component={BikeMap}/>
             </Layout>
           </Layout>
         </Router>

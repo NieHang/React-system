@@ -1,0 +1,1 @@
+export const GET_BIKE_LIST = 'bikeMap/GET_BIKE_LIST';
