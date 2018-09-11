@@ -132,13 +132,13 @@ class Nav extends PureComponent {
               </span>
             }
           >
-            <Menu.Item key="bar" context="柱形图">
+            <Menu.Item key="/charts/bar" context="柱形图">
               柱形图
             </Menu.Item>
-            <Menu.Item key="pie" context="饼图">
+            <Menu.Item key="/charts/pie" context="饼图">
               饼图
             </Menu.Item>
-            <Menu.Item key="line" context="折线图">
+            <Menu.Item key="/charts/line" context="折线图">
               折线图
             </Menu.Item>
           </SubMenu>
