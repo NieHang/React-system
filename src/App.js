@@ -25,6 +25,7 @@ import Order from "./pages/order/loadable";
 import User from './pages/user/loadable';
 import BikeMap from './pages/bikemap/loadable';
 import Bar from './pages/charts/bar/loadable';
+import Pie from './pages/charts/pie/loadable';
 
 const history = createHistory();
 
@@ -60,6 +61,7 @@ class App extends PureComponent {
               <Route path='/user' exact component={User}/>
               <Route path='/bikemap' exact component={BikeMap}/>
               <Route path='/charts/bar' exact component={Bar}/>
+              <Route path='/charts/pie' exact component={Pie}/>
             </Layout>
           </Layout>
         </Router>

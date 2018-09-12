@@ -142,7 +142,7 @@ class Nav extends PureComponent {
               折线图
             </Menu.Item>
           </SubMenu>
-          <Menu.Item key="permission" context="权限设置">
+          <Menu.Item key="/permission" context="权限设置">
             <Icon type="exclamation" theme="outlined" />
             <span>权限设置</span>
           </Menu.Item>
