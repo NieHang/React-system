@@ -27,6 +27,7 @@ import BikeMap from './pages/bikemap/loadable';
 import Bar from './pages/charts/bar/loadable';
 import Pie from './pages/charts/pie/loadable';
 import Line from './pages/charts/line/loadable';
+import Permission from './pages/permission/loadable';
 
 const history = createHistory();
 
@@ -64,6 +65,7 @@ class App extends PureComponent {
               <Route path='/charts/bar' exact component={Bar}/>
               <Route path='/charts/pie' exact component={Pie}/>
               <Route path='/charts/line' exact component={Line}/>
+              <Route path='/permission' exact component={Permission}/>
             </Layout>
           </Layout>
         </Router>

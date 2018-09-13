@@ -7,6 +7,7 @@ import { cityReducer } from '../pages/city/store';
 import { orderReducer } from '../pages/order/store';
 import { userReducer } from '../pages/user/store';
 import { mapReducer } from '../pages/bikemap/store';
+import { permissionReducer } from '../pages/permission/store';
 
 export default combineReducers({
   header: headerReducer,
@@ -16,5 +17,6 @@ export default combineReducers({
   city: cityReducer,
   order: orderReducer,
   user: userReducer,
-  map: mapReducer
+  map: mapReducer,
+  permission: permissionReducer
 });
