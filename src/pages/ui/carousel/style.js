@@ -28,4 +28,8 @@ export const CarouselWrapper = styled.div`
       height: 400px;
     }
   }
+  .loading {
+    display: block;
+    margin: 0 auto;
+  }
 `;

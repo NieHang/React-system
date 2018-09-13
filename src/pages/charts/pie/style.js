@@ -16,4 +16,8 @@ export const PieWrapper = styled.div`
       margin: 0 10px;
     }
   }
+  .loading {
+    display: block;
+    margin: 0 auto;
+  }
 `;

@@ -15,9 +15,9 @@ export const PermissionWrapper = styled.div`
     .ant-calendar-picker {
       margin: 0 10px;
     }
-    .loading {
-      display: block;
-      margin: 0 auto;
-    }
+  }
+  .loading {
+    display: block;
+    margin: 0 auto;
   }
 `;

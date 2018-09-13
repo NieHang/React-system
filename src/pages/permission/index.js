@@ -7,12 +7,12 @@ import {
   Table,
   Input,
   Tree,
-  Transfer
+  Transfer,
+  Spin
 } from "antd";
 import { PermissionWrapper } from "./style";
 import { connect } from "react-redux";
 import { actionCreators } from "./store";
-import loadingImg from "../../static/loading.gif";
 
 class Permission extends PureComponent {
   render() {
@@ -35,11 +35,11 @@ class Permission extends PureComponent {
     } = this.props;
     const Option = Select.Option;
     const TreeNode = Tree.TreeNode;
-    let Box;
+    let Load;
     if (list.size === 0) {
-      Box = <img className='loading' src={loadingImg} alt="" />;
+      Load = <Spin className='loading' tip="Loading..." />;
     } else {
-      Box = (
+      Load = (
         <Table
           bordered
           rowSelection={{
@@ -70,7 +70,7 @@ class Permission extends PureComponent {
             </div>
           }
         >
-          {Box}
+          {Load}
           <Modal
             title="创建角色"
             visible={roleVisible}

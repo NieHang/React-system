@@ -7,7 +7,8 @@ import {
   Modal,
   Radio,
   DatePicker,
-  Popconfirm
+  Popconfirm,
+  Spin
 } from "antd";
 import { UserWrapper } from "./style";
 import { connect } from "react-redux";
@@ -17,7 +18,6 @@ import moment from "moment";
 class User extends PureComponent {
   render() {
     const RadioGroup = Radio.Group;
-
     const TextArea = Input.TextArea;
     const {
       columns,
@@ -42,6 +42,26 @@ class User extends PureComponent {
       changeBirth,
       changeAddr
     } = this.props;
+
+    let Load;
+    if (data.size === 0) {
+      Load = <Spin tip="Loading..." className="loading" size="large" />;
+    } else {
+      Load = (
+        <Table
+          bordered
+          rowSelection={{
+            type: "radio",
+            onChange(key, row) {
+              selectUser(row[0]);
+            }
+          }}
+          columns={[...columns.toJS()]}
+          dataSource={[...data]}
+        />
+      );
+    }
+
     return (
       <UserWrapper>
         <Card>
@@ -189,17 +209,7 @@ class User extends PureComponent {
               </span>
             </div>
           </Modal>
-          <Table
-            bordered
-            rowSelection={{
-              type: "radio",
-              onChange(key, row) {
-                selectUser(row[0]);
-              }
-            }}
-            columns={[...columns.toJS()]}
-            dataSource={[...data]}
-          />
+          {Load}
         </Card>
       </UserWrapper>
     );
@@ -255,7 +265,7 @@ const mapDispatch = dispatch => ({
       Modal.info({ title: "温馨提示", content: "请选择一个员工" });
     } else {
       dispatch(actionCreators.getData());
-      Modal.info({title: '删除成功！'});
+      Modal.info({ title: "删除成功！" });
     }
   },
   changeName(e) {

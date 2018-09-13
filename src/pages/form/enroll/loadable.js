@@ -1,11 +1,16 @@
 import React from "react";
 import Loadable from "react-loadable";
 import { EnrollWrapper } from "./style";
+import { Spin } from "antd";
 
 const LoadableComponent = Loadable({
   loader: () => import("./"),
   loading() {
-    return <EnrollWrapper><img src="../../../static/loading.gif" alt="" /></EnrollWrapper>;
+    return (
+      <EnrollWrapper>
+        <Spin className="loading" size="large" tip="Loading..." />
+      </EnrollWrapper>
+    );
   }
 });
 

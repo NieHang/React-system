@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Card, Button, Select, Modal, Radio, Table } from "antd";
+import { Card, Button, Select, Modal, Radio, Table, Spin } from "antd";
 import { CityWrapper } from "./style";
 import { actionCreators } from "./store";
 import { connect } from "react-redux";
@@ -61,6 +61,14 @@ class City extends PureComponent {
     const Option = Select.Option;
     const { city, defaultValue, mode, opMode, state, visible } = this.state;
     const RadioGroup = Radio.Group;
+    const { data } = this.props;
+    let Load;
+    if (data.size === 0) {
+      Load = <Spin className="loading" size="large" tip="Loading..." />;
+    } else {
+      Load = <Table bordered columns={this.columns} dataSource={[...data]} />;
+    }
+
     return (
       <CityWrapper>
         <Card>
@@ -150,11 +158,7 @@ class City extends PureComponent {
               </RadioGroup>
             </div>
           </Modal>
-          <Table
-            bordered
-            columns={this.columns}
-            dataSource={[...this.props.data]}
-          />
+          {Load}
         </Card>
       </CityWrapper>
     );

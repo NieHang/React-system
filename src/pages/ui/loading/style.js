@@ -16,4 +16,8 @@ export const LoadWrapper = styled.div`
   .ant-spin-nested-loading {
     margin-top: 20px;
   }
+  .loading {
+    display: block;
+    margin: 0 auto;
+  }
 `;

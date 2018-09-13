@@ -20,4 +20,8 @@ export const LoginWrapper = styled.div`
     width: 100%;
     margin-left: 0;
   }
+  .loading {
+    display: block;
+    margin: 0 auto;
+  }
 `;

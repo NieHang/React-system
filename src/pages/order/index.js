@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Card, Button, Select, DatePicker, Table, Modal } from "antd";
+import { Card, Button, Select, DatePicker, Table, Modal, Spin } from "antd";
 import { connect } from "react-redux";
 import { OrderWrapper } from "./style";
 import { actionCreators } from "./store";
@@ -22,6 +22,21 @@ class Order extends PureComponent {
     const Option = Select.Option;
     const { RangePicker } = DatePicker;
     const { columns, data } = this.props;
+    let Load;
+    if (data.size === 0) {
+      Load = <Spin className="loading" size="large" tip="Loading..." />;
+    } else {
+      Load = (
+        <Table
+          bordered
+          columns={[...columns.toJS()]}
+          dataSource={[...data]}
+          rowSelection={{ type: "radio" }}
+          style={{ x: 1200 }}
+        />
+      );
+    }
+
     return (
       <OrderWrapper>
         <Card>
@@ -71,13 +86,7 @@ class Order extends PureComponent {
             </div>
           }
         >
-          <Table
-            bordered
-            columns={[...columns.toJS()]}
-            dataSource={[...data]}
-            rowSelection={{type: 'radio'}}
-            style={{x: 1200}}
-          />
+          {Load}
         </Card>
       </OrderWrapper>
     );

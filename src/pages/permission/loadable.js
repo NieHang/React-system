@@ -1,14 +1,14 @@
 import React from "react";
 import Loadable from "react-loadable";
 import { PermissionWrapper } from "./style";
-import loadingImg from '../../static/loading.gif';
+import { Spin } from "antd";
 
 const LoadableComponent = Loadable({
   loader: () => import("./"),
   loading() {
     return (
       <PermissionWrapper>
-        <img src={loadingImg} alt="" />
+        <Spin tip="Loading" className='loading' size='large'/>
       </PermissionWrapper>
     );
   }

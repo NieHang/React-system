@@ -10,4 +10,8 @@ export const GalleryWrapper = styled.div`
   .ant-card {
     margin-bottom: 20px;
   }
+  .loading {
+    display: block;
+    margin: 0 auto;
+  }
 `;

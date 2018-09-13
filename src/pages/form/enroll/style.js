@@ -33,4 +33,8 @@ export const EnrollWrapper = styled.div`
       height: 128px;
     }
   }
+  .loading {
+    display: block;
+    margin: 0 auto;
+  }
 `;
