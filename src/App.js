@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import { Provider } from "react-redux";
 import { Route, Router } from "react-router-dom";
-import createHistory from "history/createBrowserHistory";
+import createHistory from "history/createHashHistory";
 import { Layout } from "antd";
 import store from "./store";
 import Nav from "./pages/nav";
@@ -15,7 +15,7 @@ import Message from "./pages/ui/message/loadable";
 import Tab from "./pages/ui/tab/loadable";
 import Gallery from "./pages/ui/gallery/loadable";
 import Carousel from "./pages/ui/carousel/loadable";
-import Login from "./pages/form/login/loadable";
+import LoginForm from "./pages/form/login/loadable";
 import Enroll from "./pages/form/enroll/loadable";
 import BasicTable from "./pages/table/basic/loadable";
 import HighTable from "./pages/table/high/loadable";
@@ -28,6 +28,7 @@ import Bar from './pages/charts/bar/loadable';
 import Pie from './pages/charts/pie/loadable';
 import Line from './pages/charts/line/loadable';
 import Permission from './pages/permission/loadable';
+import Login from './pages/login/loadable';
 
 const history = createHistory();
 
@@ -35,11 +36,10 @@ const { Sider } = Layout;
 
 class App extends PureComponent {
   render() {
-    return (
-      <Provider store={store}>
+    return <Provider store={store}>
         <Router history={history}>
           <Layout>
-            <Sider width="240">
+            <Sider width="240" breakpoint="lg" collapsedWidth="0">
               <Nav />
             </Sider>
             <Layout>
@@ -53,24 +53,23 @@ class App extends PureComponent {
               <Route path="/ui/tab" exact component={Tab} />
               <Route path="/ui/gallery" exact component={Gallery} />
               <Route path="/ui/carousel" exact component={Carousel} />
-              <Route path="/form/login" exact component={Login} />
+              <Route path="/form/login" exact component={LoginForm} />
               <Route path="/form/enroll" exact component={Enroll} />
               <Route path="/table/basic" exact component={BasicTable} />
               <Route path="/table/high" exact component={HighTable} />
               <Route path="/rich" exact component={Rich} />
               <Route path="/city" exact component={City} />
               <Route path="/order" exact component={Order} />
-              <Route path='/user' exact component={User}/>
-              <Route path='/bikemap' exact component={BikeMap}/>
-              <Route path='/charts/bar' exact component={Bar}/>
-              <Route path='/charts/pie' exact component={Pie}/>
-              <Route path='/charts/line' exact component={Line}/>
-              <Route path='/permission' exact component={Permission}/>
+              <Route path="/user" exact component={User} />
+              <Route path="/bikemap" exact component={BikeMap} />
+              <Route path="/charts/bar" exact component={Bar} />
+              <Route path="/charts/pie" exact component={Pie} />
+              <Route path="/charts/line" exact component={Line} />
+              <Route path="/permission" exact component={Permission} />
             </Layout>
           </Layout>
         </Router>
-      </Provider>
-    );
+      </Provider>;
   }
 }
 
