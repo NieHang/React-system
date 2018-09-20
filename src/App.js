@@ -28,7 +28,6 @@ import Bar from './pages/charts/bar/loadable';
 import Pie from './pages/charts/pie/loadable';
 import Line from './pages/charts/line/loadable';
 import Permission from './pages/permission/loadable';
-import Login from './pages/login/loadable';
 
 const history = createHistory();
 
