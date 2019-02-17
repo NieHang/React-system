@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { Provider } from "react-redux";
-import { Route, Router } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import createHistory from "history/createHashHistory";
 import { Layout } from "antd";
 import store from "./store";
