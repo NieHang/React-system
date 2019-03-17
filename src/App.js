@@ -36,7 +36,7 @@ const { Sider } = Layout;
 class App extends PureComponent {
   render() {
     return <Provider store={store}>
-        <Router history={history}>
+        <Router history={history} basename='/react_system'>
           <Layout>
             <Sider width="240" breakpoint="lg" collapsedWidth="0">
               <Nav />
