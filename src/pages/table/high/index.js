@@ -79,7 +79,7 @@ class High extends PureComponent {
               title="确定要删除吗？"
               onConfirm={() => this.handleDelete(record.key)}
             >
-              <a href="javascript:;">删除</a>
+              <a href="">删除</a>
             </Popconfirm>
           ) : null;
         }
